@@ -561,7 +561,7 @@ function wordDemo() {
 		y=Math.floor(Math.random() * (table.rows[x].cells.length-1))+1
 	}
 	word=word.replace("K",(table.rows[x].cells[0].innerHTML+table.rows[0].cells[y].innerHTML).replace("--",""))
-	phonetic=phonetic.replace("K",(table.rows[x].cells[y].innerHTML))
+	phonetic=phonetic.replace("K",((table.rows[x].cells[y].innerHTML)+"~").split("~")[0])
 	console.log((table.rows[x].cells[0].innerHTML+table.rows[0].cells[y].innerHTML).replace("--",""),x,y);
 	x=0
 	y=0
@@ -570,7 +570,7 @@ function wordDemo() {
 		y=Math.floor(Math.random() * (table.rows[x].cells.length-1))+1
 	}
 	word=word.replace("K",(table.rows[x].cells[0].innerHTML+table.rows[0].cells[y].innerHTML).replace("--",""))
-	phonetic=phonetic.replace("K",(table.rows[x].cells[y].innerHTML))
+	phonetic=phonetic.replace("K",((table.rows[x].cells[y].innerHTML)+"~").split("~")[0])
 	console.log((table.rows[x].cells[0].innerHTML+table.rows[0].cells[y].innerHTML).replace("--",""),x,y);
 	
 	RAM=Math.floor(Math.random() * 2)
@@ -587,15 +587,15 @@ function wordDemo() {
 	
 	RAM=Math.floor(Math.random() * 7)
 	word=word.replace("V",["i","y","u","e","o","a","v"][RAM])
-	phonetic=phonetic.replace("V",["i","y~ɨ","u","e","o","a~ɑ","v̩"][RAM])
+	phonetic=phonetic.replace("V",["i","ɨ","u","e","o","a","v̩"][RAM])
 	
 	RAM=Math.floor(Math.random() * 7)
 	word=word.replace("V",["i","y","u","e","o","a","v"][RAM])
-	phonetic=phonetic.replace("V",["i","y~ɨ","u","e","o","a~ɑ","v̩"][RAM])
+	phonetic=phonetic.replace("V",["i","ɨ","u","e","o","a","v̩"][RAM])
 	
 	RAM=Math.floor(Math.random() * 7)
 	word=word.replace("V",["i","y","u","e","o","a","v"][RAM])
-	phonetic=phonetic.replace("V",["i","y~ɨ","u","e","o","a~ɑ","v̩"][RAM])
+	phonetic=phonetic.replace("V",["i","ɨ","u","e","o","a","v̩"][RAM])
 	
 	document.getElementById("demoWord").innerHTML = word + " ["+phonetic+"]";
 	forbiden=document.getElementById("forbiden").innerHTML.split(' ')
